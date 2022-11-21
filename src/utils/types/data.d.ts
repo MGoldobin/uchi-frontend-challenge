@@ -4,3 +4,8 @@ interface CatResponse {
 }
 
 type CatFuncResponse = CatResponse[] | []
+
+declare module "*.svg" {
+  const content: any;
+  export default content;
+}
