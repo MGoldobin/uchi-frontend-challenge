@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useGlobalContext } from '../../utils/hooks'
+
+import LikeButton from '../../images/likeButton.svg'
+import LikeButtonClicked from '../../images/likeButton_clicked.svg'
+import LikeButtonHover from '../../images/likeButton_hover.svg'
 
 interface CardProps {
 	cat: CatResponse
@@ -21,7 +25,7 @@ const StyledCard = styled.div<StyleProps>`
 	}
 
 	&:hover button {
-		background-image: url(${props => props.liked ? './images/likeButton_clicked.svg' : './images/likeButton.svg'}) !important;
+		background-image: url(${props => props.liked ? LikeButtonClicked : LikeButton}) !important;
 	}
 `
 
@@ -43,7 +47,7 @@ const Button = styled.button<StyleProps>`
 	background-size: contain;
 
 	&:hover {
-		background-image: url('./images/likeButton_hover.svg') !important;
+		background-image: url(${LikeButtonHover}) !important;
 	}
 `
 
