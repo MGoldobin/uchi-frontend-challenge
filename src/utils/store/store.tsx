@@ -43,8 +43,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({children}) => {
     } catch (e) {
       console.log(e)
     }
-		setPage(prev => prev + 1)
-    setLoading(false)
+		setTimeout(() => {
+			setPage(prev => prev + 1)
+			setLoading(false)
+		}, 0)
   }
 
 	const addToLiked = (cat: CatResponse) => {
