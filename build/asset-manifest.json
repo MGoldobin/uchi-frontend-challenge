@@ -1,13 +1,16 @@
 {
   "files": {
     "main.css": "/uchi-frontend-challenge/static/css/main.8bee1a94.css",
-    "main.js": "/uchi-frontend-challenge/static/js/main.91d84ee6.js",
+    "main.js": "/uchi-frontend-challenge/static/js/main.e7808c7e.js",
+    "static/media/likeButton.svg": "/uchi-frontend-challenge/static/media/likeButton.6adfe85f8b98c6dc6b44df906a50f5eb.svg",
     "index.html": "/uchi-frontend-challenge/index.html",
+    "static/media/likeButton_clicked.svg": "/uchi-frontend-challenge/static/media/likeButton_clicked.6e844464e1e159f1f41bca68b1b9c1bc.svg",
+    "static/media/likeButton_hover.svg": "/uchi-frontend-challenge/static/media/likeButton_hover.8220379cb36244a7738b6600ebc04025.svg",
     "main.8bee1a94.css.map": "/uchi-frontend-challenge/static/css/main.8bee1a94.css.map",
-    "main.91d84ee6.js.map": "/uchi-frontend-challenge/static/js/main.91d84ee6.js.map"
+    "main.e7808c7e.js.map": "/uchi-frontend-challenge/static/js/main.e7808c7e.js.map"
   },
   "entrypoints": [
     "static/css/main.8bee1a94.css",
-    "static/js/main.91d84ee6.js"
+    "static/js/main.e7808c7e.js"
   ]
 }
