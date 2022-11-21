@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
 import { CardList } from '../../components'
-import { useGlobalContext } from '../../utils/hooks'
+import { useGlobalContext, useIntersectionViewport } from '../../utils/hooks'
 
 const StyledPage = styled.div`
 	width: 100%;
@@ -19,25 +19,19 @@ const InfoText = styled.p`
 
 export const AllCats: React.FC = () => {
 	const { cats, loading, getCats } = useGlobalContext()
-	
-	const scrollHandler = useCallback(() => {
-		if (document.documentElement.scrollHeight - document.documentElement.scrollTop - window.innerHeight < 50 && !loading) {
-			getCats()
-			document.removeEventListener('scroll', scrollHandler)
-		}
-	}, [loading])
+	const bottomTextRef = useRef<HTMLParagraphElement  | null>(null)
+	const isVisible = useIntersectionViewport(bottomTextRef, {})
 
 	useEffect(() => {
-		document.addEventListener('scroll', scrollHandler)
-		return () => {
-			document.removeEventListener('scroll', scrollHandler)
+		if(isVisible && !loading) {
+			getCats()
 		}
-	}, [scrollHandler])
+	}, [isVisible, loading])
 
 	return (
 		<StyledPage>
 			<CardList cards={cats}/>
-			<InfoText>
+			<InfoText ref={bottomTextRef}>
 				{
 					loading && "... загружаем еще котиков ..."
 				}
